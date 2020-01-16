@@ -8,7 +8,12 @@ import DiceSide from "./components/diceSide";
 import SuccessRate from "./components/successRate";
 import DiceNumber from "./components/diceNumber";
 
-ReactDOM.render(<DiceSide />, <DiceNumber />, document.getElementById("root"));
+ReactDOM.render(
+  <DiceSide />,
+  <DiceNumber />,
+  <SuccessRate />,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
