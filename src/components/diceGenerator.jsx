@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import DiceSide from "./components/diceSide";
-import SuccessRate from "./components/successRate";
-import DiceNumber from "./components/diceNumber";
+import DiceSide from "./diceSide";
+import SuccessRate from "./successRate";
+import DiceNumber from "./diceNumber";
 
 class DiceGenerator extends Component {
   state = {};

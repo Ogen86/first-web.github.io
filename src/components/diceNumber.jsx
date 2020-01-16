@@ -22,16 +22,14 @@ class DiceNumber extends Component {
           onClick={this.handleDecrement}
           className="btn btn-secondary btn-sm m-1"
         >
-          {" "}
-          -{" "}
+          -
         </button>
         <span className="badge badge-primary m-2"> {this.state.number} </span>
         <button
           onClick={this.handleIncrement}
           className="btn btn-secondary btn-sm m-1"
         >
-          {" "}
-          +{" "}
+          +
         </button>
       </React.Fragment>
     );
