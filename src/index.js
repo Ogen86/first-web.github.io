@@ -4,16 +4,9 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
-import DiceSide from "./components/diceSide";
-import SuccessRate from "./components/successRate";
-import DiceNumber from "./components/diceNumber";
+import DiceGenerator from "./components/diceGenerator";
 
-ReactDOM.render(
-  <DiceSide />,
-  <DiceNumber />,
-  <SuccessRate />,
-  document.getElementById("root")
-);
+ReactDOM.render(<DiceGenerator />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
