@@ -9,22 +9,24 @@ class DiceResult extends Component {
   };
 
   getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * max) + min;
   };
 
-  handleRoll() {
+  handleRoll = () => {
     let rollNumber = 0;
     this.setState.result = 0;
     for (rollNumber = 0; rollNumber < DiceNumber.state.number; rollNumber++) {
       if (getRandomInt(1, DiceSide.state.side) >= SuccessRate.state.rate)
         this.setState({ result: this.state.result + 1 });
     }
-  }
+  };
   render() {
     return (
       <div>
         <button
-          onClick={this.handleRoll}
+          onClick={this.handleRoll()}
           className="btn btn-secondary btn-sm m-1"
         >
           Generate
