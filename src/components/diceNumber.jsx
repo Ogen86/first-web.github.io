@@ -2,17 +2,17 @@ import React, { Component } from "react";
 
 class DiceNumber extends Component {
   state = {
-    number: 1
+    number: 0
   };
 
-  handleIncrement = () => {
-    this.setState({ number: this.state.number + 1 });
-  };
+  handleIncrement() {
+    this.props.number({ number: this.props.number + 1 });
+  }
 
-  handleDecrement = () => {
+  handleDecrement() {
     if (this.state.number > 0)
-      return this.setState({ number: this.state.number - 1 });
-  };
+      return this.props.number({ number: this.props.number - 1 });
+  }
 
   render() {
     return (

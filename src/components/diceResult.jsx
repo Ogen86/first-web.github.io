@@ -3,25 +3,35 @@ import DiceNumber from "./diceNumber";
 import SuccessRate from "./successRate";
 import DiceSide from "./diceSide";
 
+const getRandomInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * max) + min;
+};
+
 class DiceResult extends Component {
   state = {
-    result: 0
+    result: 0,
+    sides: 6,
+    number: 3,
+    rate: 4
   };
 
-  getRandomInt = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * max) + min;
-  };
+  handleSideSetting(props) {
+    return (this.setState.sides = props.sides);
+  }
 
-  handleRoll = () => {
+  handleRoll() {
     let rollNumber = 0;
     this.setState.result = 0;
-    for (rollNumber = 0; rollNumber < DiceNumber.state.number; rollNumber++) {
-      if (getRandomInt(1, DiceSide.state.side) >= SuccessRate.state.rate)
+    //this.setState.sides = DiceSide.sides;
+    //this.setState.number = DiceNumber.number;
+    //this.setState.rate = SuccessRate.rate;
+    for (rollNumber = 0; rollNumber < this.state.number; rollNumber++) {
+      if (getRandomInt(1, this.state.sides) >= this.state.rate)
         this.setState({ result: this.state.result + 1 });
     }
-  };
+  }
   render() {
     return (
       <div>
@@ -31,8 +41,8 @@ class DiceResult extends Component {
         >
           Generate
         </button>
-        <span className="badge badge-primary m-2">The rolls result:</span>
-        <span className="badge badge-primary m-2">{this.state.result}</span>
+        <h2>The rolls result:</h2>
+        <h3>{this.state.result}</h3>
       </div>
     );
   }

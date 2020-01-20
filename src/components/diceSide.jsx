@@ -1,33 +1,46 @@
 import React, { Component } from "react";
+import DiceResult from "./diceResult";
 
 class DiceSide extends Component {
   state = {
-    diceSide: 6
+    sides: 0
   };
 
-  handle4SideSetting = () => {
-    this.setState({ diceSide: 4 });
-  };
+  handle4SideSetting() {
+    {
+      this.setState.sides = 4;
+    }
+  }
 
-  handle6SideSetting = () => {
-    this.setState({ diceSide: 6 });
-  };
+  handle6SideSetting() {
+    {
+      this.props.sides = 6;
+    }
+  }
 
-  handle8SideSetting = () => {
-    this.setState({ diceSide: 8 });
-  };
+  handle8SideSetting() {
+    {
+      this.props.sides = 8;
+    }
+  }
 
-  handle10SideSetting = () => {
-    this.setState({ diceSide: 10 });
-  };
+  handle10SideSetting() {
+    {
+      this.props.sides = 10;
+    }
+  }
 
-  handle12SideSetting = () => {
-    this.setState({ diceSide: 12 });
-  };
+  handle12SideSetting() {
+    {
+      this.props.sides = 12;
+    }
+  }
 
-  handle20SideSetting = () => {
-    this.setState({ diceSide: 20 });
-  };
+  handle20SideSetting() {
+    {
+      this.props.sides = 20;
+    }
+  }
 
   render() {
     return (
@@ -35,6 +48,7 @@ class DiceSide extends Component {
         <span className="badge badge-primary m-2">
           The simulated dice side number:
         </span>
+        <h1 className="badge badge-primary m-2">{this.state.sides}</h1>
         <button
           onClick={this.handle4SideSetting}
           className="btn btn-secondary btn-sm m-1"
@@ -42,7 +56,7 @@ class DiceSide extends Component {
           4 side
         </button>
         <button
-          onClick={this.handle6SideSetting}
+          onClick={this.handle4SideSetting(4)}
           className="btn btn-secondary btn-sm m-1"
         >
           6 side

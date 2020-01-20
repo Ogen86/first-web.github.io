@@ -14,8 +14,8 @@ class SuccessRate extends Component {
         <input
           type="number"
           name="success rate"
-          value={this.state.rate}
-          onChange={{ rate: this.state.rate }}
+          value={this.props.rate}
+          onChange={{ rate: this.props.rate }}
         />
       </React.Fragment>
     );
