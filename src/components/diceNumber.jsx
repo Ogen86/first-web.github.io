@@ -6,12 +6,14 @@ class DiceNumber extends Component {
   };
 
   handleIncrement() {
-    this.props.number({ number: this.props.number + 1 });
+    this.state.number({ number: this.state.number + 1 });
+    this.props.handleNumbersetting(this.state.number);
   }
 
   handleDecrement() {
     if (this.state.number > 0)
-      return this.props.number({ number: this.props.number - 1 });
+      return this.state.number({ number: this.state.number - 1 });
+    this.props.handleNumbersetting(this.state.number);
   }
 
   render() {
@@ -19,14 +21,14 @@ class DiceNumber extends Component {
       <React.Fragment>
         <span className="badge badge-primary m-2">the dice's number :</span>
         <button
-          onClick={this.handleDecrement}
+          onClick={this.handleDecrement().bind(this)}
           className="btn btn-secondary btn-sm m-1"
         >
           -
         </button>
         <span className="badge badge-primary m-2"> {this.state.number} </span>
         <button
-          onClick={this.handleIncrement}
+          onClick={this.handleIncrement().bind(this)}
           className="btn btn-secondary btn-sm m-1"
         >
           +

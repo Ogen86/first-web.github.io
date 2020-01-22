@@ -5,6 +5,11 @@ class SuccessRate extends Component {
     rate: 0
   };
 
+  handleChange(event) {
+    this.setState({ rate: event.target.value });
+    this.props.handleRateSetting(event.target.value);
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -13,9 +18,11 @@ class SuccessRate extends Component {
         </span>
         <input
           type="number"
+          placeholder="please give a success rate"
           name="success rate"
-          value={this.props.rate}
-          onChange={{ rate: this.props.rate }}
+          min={0}
+          value={this.state.rate}
+          onChange={this.handleChange.bind(this)}
         />
       </React.Fragment>
     );
