@@ -21,6 +21,14 @@ class DiceGenerator extends Component {
     this.setState({ sides: newSide });
   }
 
+  handleIncrement() {
+    this.setState({ number: this.state.number + 1 });
+  }
+
+  handleDecrement() {
+    if (this.state.number > 0) this.setState({ number: this.state.number - 1 });
+  }
+
   handleNumbersetting(newNumber) {
     this.setState({ number: newNumber });
   }
@@ -41,9 +49,12 @@ class DiceGenerator extends Component {
   render() {
     return (
       <div>
-        <DiceSide onClick={this.handleSideSetting.bind(this)} />
-        <DiceNumber onClick={this.handleNumbersetting.bind(this)} />
-        <SuccessRate onChange={this.handleRateSetting.bind(this)} />
+        <DiceSide sides={this.state.sides} doSideSet={this.handleSideSetting} />
+        <DiceNumber
+          doIncrement={this.handleIncrement}
+          doDecrement={this.handleDecrement}
+        />
+        <SuccessRate onChange={this.handleRateSetting} />
         <div>
           <button
             onClick={this.handleGenerate}
