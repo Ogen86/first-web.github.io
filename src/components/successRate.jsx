@@ -7,7 +7,7 @@ class SuccessRate extends Component {
 
   handleChange(event) {
     this.setState({ rate: event.target.value });
-    this.props.handleRateSetting(event.target.value);
+    this.props.handleChange(event.target.value);
   }
 
   render() {
@@ -20,7 +20,7 @@ class SuccessRate extends Component {
           type="number"
           placeholder="please give a success rate"
           name="success rate"
-          min={0}
+          min={1}
           value={this.state.rate}
           onChange={this.handleChange.bind(this)}
         />
