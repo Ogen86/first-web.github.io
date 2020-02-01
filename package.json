@@ -31,5 +31,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@version/react-router-v3": "^1.0.0",
+    "react-router": "^5.1.2",
+    "webpack": "^4.41.5",
+    "webpack-dev": "^1.1.1"
   }
 }
